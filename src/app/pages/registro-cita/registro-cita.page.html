@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar class="bg-color">
+    <ion-title class="ion-text-center">Solicitud de Cita</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <form class="ion-text-center" #formulario="ngForm">
+    <ion-item lines="none">
+      <ion-label color="dark"> Seleccione Mascota </ion-label>
+      <ion-select interface="popover" name="nombreMascota" [(ngModel)]="agendar.nombreMascota" placeholder="Seleccione 1">
+        <ion-select-option value="mascota1">Gaston</ion-select-option>
+        <ion-select-option value="mascota2">Pelusa</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label color="dark"> Seleccionar día </ion-label>
+      <ion-datetime name="fechaCita" max="2028-10-31" [(ngModel)]="agendar.fechaCita" placeholder="Fecha"
+        [min]="minDate" display-format="DD.MMM.YYYY"
+        monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Septe, Oct, Nov, Dic"></ion-datetime>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label color="dark"> Seleccione hora </ion-label>
+      <ion-datetime name="horaCita" minuteValues="0,15,30,45" [(ngModel)]="agendar.horaCita" placeholder="Hora" min="09:00" max="18:59"
+        display-format="HH:mm">
+      </ion-datetime>
+    </ion-item>
+    <br>
+    <ion-button expand="block" (click)="agendarCita(agendar.nombreMascota, agendar.fechaCita, agendar.horaCita)" color="dark">Solicitar</ion-button>
+  </form>
+</ion-content>

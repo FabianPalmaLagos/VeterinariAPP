@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar class="bg-color">
+    <ion-title class="ion-text-center">Mascotas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding ion-text-center">
+  <ion-card>
+    <ion-card-content>
+      <ion-grid fixed class="grid-style">
+        <label><b>Gastón</b> </label>
+        <ion-row class="ion-text-center">
+          <ion-col size="6">
+            <ion-item lines="none">
+              <ion-label position="floating"><b>Tipo</b></ion-label>
+              <ion-input type="text" name="tipoMascota" value="Perro" ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item lines="none">
+              <ion-label position="floating"><b>Peso</b>(kg)</ion-label>
+              <ion-input type="text" name="pesoMascota" value="10" ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-button  color="danger"  fill="outline">
+              Eliminar mascota
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <label><b>Pelusa</b> </label>
+        <ion-row class="ion-text-center">
+          <ion-col size="6">
+            <ion-item lines="none">
+              <ion-label position="floating"><b>Tipo</b></ion-label>
+              <ion-input type="text" name="tipoMascota" value="Gato" ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item lines="none">
+              <ion-label position="floating"><b>Peso</b>(kg)</ion-label>
+              <ion-input type="text" name="pesoMascota" value="4" ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-button  color="danger"  fill="outline">
+              Eliminar mascota
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-menu-toggle>
+  <ion-menu  side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar class="bg-color" color="dark">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item href="registro-mascota" button>
+          <ion-icon slot="start"  name="add-circle-outline"></ion-icon>Registrar mascota
+        </ion-item>
+        <ion-item href="registro-cita" button>
+          <ion-icon slot="start" name="bandage-outline"></ion-icon>Solicitar cita
+        </ion-item>
+        <ion-item href="citas" button>
+          <ion-icon slot="start" name="fitness-outline"></ion-icon> Citas
+        </ion-item>
+        <ion-item href="mascotas" button >
+          <ion-icon slot="start" name="paw-outline"></ion-icon>Mascotas
+        </ion-item>
+        <ion-item  button (click)="logOut()" >
+          <ion-icon slot="start" name="log-out-outline"></ion-icon>Cerrar Sesión
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+</ion-menu-toggle>  
