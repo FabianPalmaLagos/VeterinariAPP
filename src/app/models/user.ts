@@ -4,13 +4,9 @@ export interface UserCredential {
 }
 
 export interface UserProfile {
-  puntaje: string;
-  fono: string;
   email: string;
-  fullName: string;
-}
-
-export interface campeonato {
-  nombrec: string;
-
+  direccion: string;
+  fono: string;
+  nombre: string;
+  apellido: string
 }

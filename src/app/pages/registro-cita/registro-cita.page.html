@@ -2,16 +2,20 @@
   <ion-toolbar class="bg-color">
     <ion-title class="ion-text-center">Solicitud de Cita</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
+      <ion-back-button class="bg-color-button" defaultHref="/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
+<ion-item lines="none">
+</ion-item>
+<ion-item lines="none">
+</ion-item>
 <ion-content class="ion-padding ion-text-center">
   <form class="ion-text-center" #formulario="ngForm">
     <ion-item lines="none">
       <ion-label color="dark"> Seleccione Mascota </ion-label>
-      <ion-select interface="popover" name="nombreMascota" [(ngModel)]="agendar.nombreMascota" placeholder="Seleccione 1">
+      <ion-select interface="popover" name="nombreMascota" [(ngModel)]="agendar.nombreMascota"
+        placeholder="Seleccione 1">
         <ion-select-option value="mascota1">Gaston</ion-select-option>
         <ion-select-option value="mascota2">Pelusa</ion-select-option>
       </ion-select>
@@ -25,11 +29,12 @@
     </ion-item>
     <ion-item lines="none">
       <ion-label color="dark"> Seleccione hora </ion-label>
-      <ion-datetime name="horaCita" minuteValues="0,15,30,45" [(ngModel)]="agendar.horaCita" placeholder="Hora" min="09:00" max="18:59"
-        display-format="HH:mm">
+      <ion-datetime name="horaCita" minuteValues="0,15,30,45" [(ngModel)]="agendar.horaCita" placeholder="Hora"
+        min="09:00" max="18:59" display-format="HH:mm">
       </ion-datetime>
     </ion-item>
     <br>
-    <ion-button expand="block" (click)="agendarCita(agendar.nombreMascota, agendar.fechaCita, agendar.horaCita)" color="dark">Solicitar</ion-button>
+    <ion-button expand="block" (click)="agendarCita(agendar.nombreMascota, agendar.fechaCita, agendar.horaCita)"
+      color="dark">Solicitar</ion-button>
   </form>
 </ion-content>
