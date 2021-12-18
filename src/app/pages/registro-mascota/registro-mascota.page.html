@@ -16,7 +16,9 @@
   <form class="ion-text-center" #formulario="ngForm">
 
     <ion-item>
-
+      <ion-input type="hidden" name="idDueno"  [(ngModel)]="insertar.idDueno" [value]="userProfile?.uid"></ion-input>
+    </ion-item> 
+    <ion-item>
       <ion-label postion="fixed" color="dark"> Nombre Mascota: </ion-label>
       <ion-input type="text" name="nombreMascota" [(ngModel)]="insertar.nombreMascota" required></ion-input>
     </ion-item>
@@ -26,8 +28,8 @@
       <ion-label position="fixed" color="dark"> Edad: </ion-label>
       <ion-input type="number" name="edadMascota" [(ngModel)]="insertar.edadMascota" required> </ion-input>
       <ion-select interface="popover" name="tipoEdad" [(ngModel)]="insertar.tipoEdad" placeholder="Años/Meses">
-        <ion-select-option value="años">Años</ion-select-option>
-        <ion-select-option value="meses">Meses</ion-select-option>
+        <ion-select-option value="Años">Años</ion-select-option>
+        <ion-select-option value="Meses">Meses</ion-select-option>
       </ion-select>
     </ion-item>
 
@@ -41,15 +43,18 @@
 
         <ion-label color="dark"> Tipo de Mascota: </ion-label>
         <ion-select interface="popover" name="tipoMascota" [(ngModel)]="insertar.tipoMascota" placeholder="Seleccionar">
-          <ion-select-option value="perro">Perro</ion-select-option>
-          <ion-select-option value="gato">Gato</ion-select-option>
+          <ion-select-option value="Perro">Perro</ion-select-option>
+          <ion-select-option value="Gato">Gato</ion-select-option>
+          <ion-select-option value="Hamster">Hamster</ion-select-option>
+          <ion-select-option value="Erizo">Erizo</ion-select-option>
+
         </ion-select>
       </ion-item>
 
     </ion-list>
     <br>
     <ion-button expand="block" color="dark"
-      (click)="insertarMascota(insertar.nombreMascota, insertar.edadMascota, insertar.tipoEdad, insertar.pesoMascota, insertar.tipoMascota)">
+      (click)="insertarMascota(insertar.idDueno, insertar.nombreMascota, insertar.edadMascota, insertar.tipoEdad, insertar.pesoMascota, insertar.tipoMascota, insertar.estado)">
       Registrar</ion-button>
   </form>
-</ion-content>
+</ion-content> 

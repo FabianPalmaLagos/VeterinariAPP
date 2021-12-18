@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar class="bg-color">
+    <ion-title class="ion-text-center">Editar Cita</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="bg-color-button" defaultHref="/mascotas"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--  {{mascotaProfile?.nombreMascota}} -->
+  <ion-card>
+    <form class="ion-text-center" [formGroup]="editCita" (ngSubmit)="editarCita()">
+      <ion-input type="hidden" formControlName="idDueno"></ion-input>
+      <ion-input type="hidden" formControlName="idCita"></ion-input>
+      <ion-item>
+        <ion-col class="text-left" size="7"> Fecha</ion-col>
+        <ion-datetime formControlName="fechaCita" [min]="minDate" display-format="DD/MM/YYYY">
+        </ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-col class="text-left" size="7"> Hora</ion-col>
+        <ion-datetime formControlName="horaCita" min="09:00" max="18:59" minuteValues="0,15,30,45" display-format="HH:mm">
+        </ion-datetime>
+      </ion-item>
+      <ion-button expand="block" color="dark" type="submit">Editar
+      </ion-button>
+    </form>
+  </ion-card>
+</ion-content>

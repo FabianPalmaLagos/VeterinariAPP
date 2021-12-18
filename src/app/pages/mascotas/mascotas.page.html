@@ -9,52 +9,45 @@
 
 
 <ion-content class="ion-padding ion-text-center">
-  <ion-card>
-    <ion-card-content>
-      <ion-grid fixed class="grid-style">
-        <label><b>Gastón</b> </label>
-        <ion-row class="ion-text-center">
-          <ion-col size="6">
-            <ion-item lines="none">
-              <ion-label position="floating"><b>Tipo</b></ion-label>
-              <ion-input type="text" name="tipoMascota" value="Perro" ></ion-input>
-            </ion-item>
+  <ion-card class="card" *ngFor="let item of mascotas">
+    <ion-card-header class="margin">
+      <ion-grid fixed class="grid-style ">
+        <ion-row class="">
+          <ion-col class="editar" size="8">
+            <ion-label class="mascota">
+              {{item.nombreMascota}}
+            </ion-label>
           </ion-col>
-          <ion-col size="6">
-            <ion-item lines="none">
-              <ion-label position="floating"><b>Peso</b>(kg)</ion-label>
-              <ion-input type="text" name="pesoMascota" value="10" ></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col size="12">
-            <ion-button  color="danger"  fill="outline">
-              Eliminar mascota
-            </ion-button>
-          </ion-col>
-        </ion-row>
-        <label><b>Pelusa</b> </label>
-        <ion-row class="ion-text-center">
-          <ion-col size="6">
-            <ion-item lines="none">
-              <ion-label position="floating"><b>Tipo</b></ion-label>
-              <ion-input type="text" name="tipoMascota" value="Gato" ></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col size="6">
-            <ion-item lines="none">
-              <ion-label position="floating"><b>Peso</b>(kg)</ion-label>
-              <ion-input type="text" name="pesoMascota" value="4" ></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col size="12">
-            <ion-button  color="danger"  fill="outline">
-              Eliminar mascota
-            </ion-button>
+          <ion-col size="4" >
+              <ion-label class="edit">
+              <ion-button class="boton" color="warning"  [routerLink]="['/edit-mascota', item.idMascota]">
+                <ion-icon class="icon" name="pencil-outline"></ion-icon>
+              </ion-button>
+              <ion-button class="boton" color="danger"  (click)="eliminarMascota(item.idMascota)">
+                <ion-icon class="icon" name="trash-outline"></ion-icon>
+              </ion-button>
+            </ion-label>
           </ion-col>
         </ion-row>
       </ion-grid>
-      
-    </ion-card-content>
+    </ion-card-header>
+    <ion-card-body>
+      <ion-grid fixed class="grid-style">
+        <ion-row class="ion-text-center">
+          <ion-col class="item-card" >
+            <ion-label><b class="tipoInput">Tipo</b></ion-label>
+            <ion-input type="text" readonly value="{{item.tipoMascota}}" class="tipoInput2"></ion-input>
+          </ion-col>
+          <ion-col class="item-card" >
+            <ion-label ><b class="tipoInput">Edad({{item.tipoEdad}})</b></ion-label>
+            <ion-input type="text" readonly value="{{item.edadMascota}}" class="tipoInput2"></ion-input>
+          </ion-col>
+          <ion-col class="item-card" >
+            <ion-label ><b class="tipoInput">Peso(Kg)</b></ion-label>
+            <ion-input type="text" readonly value="{{item.pesoMascota}}" class="tipoInput2"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-body>
   </ion-card>
-  
 </ion-content>

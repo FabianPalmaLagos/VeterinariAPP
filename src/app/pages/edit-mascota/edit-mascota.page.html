@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar class="bg-color">
+    <ion-title class="ion-text-center">Editar Mascota</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="bg-color-button" defaultHref="/mascotas"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--  {{mascotaProfile?.nombreMascota}} -->
+  <ion-card>
+    <form class="ion-text-center" [formGroup]="editMascota" (ngSubmit)="editarMascota()">
+      <ion-item>
+        <ion-input type="hidden" formControlName="idDueno" ></ion-input>
+        <ion-input type="hidden" formControlName="idMascota" ></ion-input>
+        <ion-col class="text-left" size="7"> Nombre Mascota</ion-col>
+        <ion-col class="text-center" size="5">
+          <ion-input type="text" formControlName="nombreMascota" >
+          </ion-input>
+        </ion-col>
+      </ion-item>
+      <ion-item>
+        <ion-col class="text-left" size="7"> Tipo Mascota</ion-col>
+        <ion-col class="text-center" size="5">
+          <ion-input type="text" formControlName="tipoMascota" >
+          </ion-input>
+        </ion-col>
+      </ion-item>
+      <ion-item>
+        <ion-col class="text-left" size="7"> Edad Mascota</ion-col>
+        <ion-col class="text-center" size="5">
+          <ion-input type="number" formControlName="edadMascota">
+          </ion-input>
+        </ion-col>
+      </ion-item>
+      <ion-item>
+        <ion-col class="text-left" size="7"> Tipo edad</ion-col>
+        <ion-col class="text-center" size="5">
+          <ion-input type="text" formControlName="tipoEdad">
+          </ion-input>
+        </ion-col>
+      </ion-item>
+      <ion-item>
+        <ion-col class="text-left" size="7"> Peso Mascota (Kg)</ion-col>
+        <ion-col class="text-center" size="5">
+          <ion-input type="number" formControlName="pesoMascota">
+          </ion-input>
+        </ion-col>
+      </ion-item>
+      <ion-button expand="block" color="dark" type="submit">Editar
+      </ion-button>
+      <!-- 
+
+      <ion-button expand="block" color="dark"
+        (click)="insertarMascota(insertar.idDueno, insertar.nombreMascota, insertar.edadMascota, insertar.tipoEdad, insertar.pesoMascota, insertar.tipoMascota, insertar.estado)">
+        Editar
+      </ion-button> -->
+    </form>
+  </ion-card>
+</ion-content>

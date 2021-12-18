@@ -8,48 +8,41 @@
 </ion-header>
 
 <ion-content class="ion-padding ion-text-center">
-  <ion-grid fixed class="grid-style">
-    <label><b>Gastón</b> </label>
-    <ion-row class="ion-text-center">
-      <ion-col size="6">
-        <ion-item>
-          <ion-label position="floating"><b>Fecha</b></ion-label>
-          <ion-datetime readonly displayFormat="" value="2021-11-05"></ion-datetime>
-        </ion-item>
-      </ion-col>
-      <ion-col size="6">
-        <ion-item>
-          <ion-label position="floating"><b>Hora</b></ion-label>
-          <ion-datetime readonly value="15:00" displayFormat="HH:mm"></ion-datetime>
-        </ion-item>
-      </ion-col>
-      <ion-col size="12">
-        <ion-button color="danger"  fill="outline">
-          Cancelar Hora
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid fixed class="grid-style">
-    <label><b>Pelusa</b></label>
-    <ion-row class="ion-text-center">
-      <ion-col size="6">
-        <ion-item>
-          <ion-label position="floating"><b>Fecha</b></ion-label>
-          <ion-datetime readonly displayFormat="" value="2021-11-07T15:03:46.789"></ion-datetime>
-        </ion-item>
-      </ion-col>
-      <ion-col size="6">
-        <ion-item>
-          <ion-label position="floating"><b>Hora</b></ion-label>
-          <ion-datetime readonly value="17:00" displayFormat="HH:mm"></ion-datetime>
-        </ion-item>
-      </ion-col>
-      <ion-col size="12">
-        <ion-button  color="danger"  fill="outline">
-          Cancelar Hora
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-card class="card" *ngFor="let item of citas">
+    <ion-card-header class="margin">
+      <ion-grid fixed class="grid-style ">
+        <ion-row class="">
+          <ion-col class="editar" size="8">
+            <ion-label class="mascota">
+              {{item.nombreMascota}}
+            </ion-label>
+          </ion-col>
+          <ion-col size="4" >
+            <ion-label class="edit">
+            <ion-button class="boton" color="warning"  [routerLink]="['/edit-cita', item.idCita]">
+              <ion-icon class="icon" name="pencil-outline"></ion-icon>
+            </ion-button>
+            <ion-button class="boton" color="danger"  (click)="eliminarCita(item.idCita)">
+              <ion-icon class="icon" name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-label>
+        </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-body>
+      <ion-grid fixed class="grid-style">
+        <ion-row class="ion-text-center">
+          <ion-col class="item-card" >
+            <ion-label ><b class="tipoInput">Fecha</b></ion-label>
+            <ion-datetime type="text" readonly value="{{item.fechaCita}}" display-format="DD/MM/YYYY" class="tipoInput2"></ion-datetime>
+          </ion-col>
+          <ion-col class="item-card" >
+            <ion-label ><b class="tipoInput">Hora</b></ion-label>
+            <ion-datetime type="text" readonly value="{{item.horaCita}}"  display-format="HH:mm" class="tipoInput2"></ion-datetime>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-body>
+  </ion-card>
 </ion-content>

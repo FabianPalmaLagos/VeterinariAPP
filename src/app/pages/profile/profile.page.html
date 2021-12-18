@@ -1,0 +1,169 @@
+<ion-header>
+  <ion-toolbar class="bg-color">
+    <ion-title class="ion-text-center">Perfil</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="bg-color-button" defaultHref="/home"></ion-back-button>
+
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ion-text-center ion-header">
+    <ion-col size="5"> </ion-col>
+  </ion-list>
+
+
+
+
+  <ion-item (click)="updateName()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Nombre</ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.nombre">
+            {{userProfile?.nombre}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.nombre">
+            <span> Agregar </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <ion-item (click)="updateApellido()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Apellido</ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.apellido">
+            {{userProfile?.apellido}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.apellido">
+            <span> Agregar </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <ion-item (click)="updateCalle()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Calle</ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.calle">
+            {{userProfile?.calle}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.calle">
+            <span> Agregar </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <ion-item (click)="updateNCalle()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Número de calle</ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.nCalle">
+            {{userProfile?.nCalle}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.nCalle">
+            <span> Agregar </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <ion-item (click)="updateComuna()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Comúna</ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.comuna">
+            {{userProfile?.comuna}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.comuna">
+            <span> Agregar </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <ion-item (click)="updateCiudad()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Ciudad</ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.ciudad">
+            {{userProfile?.ciudad}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.ciudad">
+            <span> Agregar </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+
+  <ion-item (click)="updateFono()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Celular</ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.fono">
+            {{userProfile?.fono}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.fono">
+            <span> Agregar </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <ion-item (click)="updateEmail()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Correo </ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.email">
+            {{userProfile?.email}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.email">
+            <span> Agregar </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+
+
+
+  <ion-item (click)="updatePassword()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Password </ion-col>
+          <ion-col class="text-center" size="7" class="placeholder-profile">
+            <span> Editar </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <ion-button expand="block" color="danger" (click)="logOut()">
+    Cerrar Sesion
+  </ion-button>
+
+</ion-content>

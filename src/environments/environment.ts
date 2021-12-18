@@ -1,13 +1,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBXJVXVUr992CCaR3UdWJ32dL8BEdDXaAU",
-    authDomain: "veterinariappv2.firebaseapp.com",
-    projectId: "veterinariappv2",
-    storageBucket: "veterinariappv2.appspot.com",
-    messagingSenderId: "677979466786",
-    appId: "1:677979466786:web:bf2a7f6d72547f513aae7b",
-    measurementId: "G-9GZWPKB6GB"
+    apiKey: "AIzaSyCbvUXEpR9PgfjLr6kdUfy4rAGyqP_Ye6M",
+    authDomain: "veterinariappv3.firebaseapp.com",
+    projectId: "veterinariappv3",
+    storageBucket: "veterinariappv3.appspot.com",
+    messagingSenderId: "540391997982",
+    appId: "1:540391997982:web:fdb354db371607205fa40f"
   }
 };
 

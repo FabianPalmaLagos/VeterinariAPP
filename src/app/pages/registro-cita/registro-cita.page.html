@@ -12,29 +12,34 @@
 </ion-item>
 <ion-content class="ion-padding ion-text-center">
   <form class="ion-text-center" #formulario="ngForm">
-    <ion-item lines="none">
+    <ion-item>
+      <ion-input type="hidden" name="idDueno"  [(ngModel)]="agendar.idDueno" [value]="userProfile?.uid"></ion-input>
+    </ion-item>
+    <ion-item  lines="none">
       <ion-label color="dark"> Seleccione Mascota </ion-label>
-      <ion-select interface="popover" name="nombreMascota" [(ngModel)]="agendar.nombreMascota"
-        placeholder="Seleccione 1">
-        <ion-select-option value="mascota1">Gaston</ion-select-option>
-        <ion-select-option value="mascota2">Pelusa</ion-select-option>
+      <ion-select  interface="popover" name="nombreMascota" [(ngModel)]="agendar.nombreMascota"
+        placeholder="Seleccione su mascota">
+        <ion-select-option *ngFor="let item of mascotas" value="{{item.nombreMascota}}">{{item.nombreMascota}}</ion-select-option>
+        <!-- <ion-item>
+          <ion-input type="hidden" name="idMascota"  [(ngModel)]="agendar.idMascota" [value]="{{item.idMascota}}"></ion-input>
+        </ion-item> -->
       </ion-select>
     </ion-item>
 
     <ion-item lines="none">
       <ion-label color="dark"> Seleccionar día </ion-label>
       <ion-datetime name="fechaCita" max="2028-10-31" [(ngModel)]="agendar.fechaCita" placeholder="Fecha"
-        [min]="minDate" display-format="DD.MMM.YYYY"
+        [min]="minDate" display-format="DD.MM.YYYY"
         monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Septe, Oct, Nov, Dic"></ion-datetime>
     </ion-item>
     <ion-item lines="none">
       <ion-label color="dark"> Seleccione hora </ion-label>
-      <ion-datetime name="horaCita" minuteValues="0,15,30,45" [(ngModel)]="agendar.horaCita" placeholder="Hora"
-        min="09:00" max="18:59" display-format="HH:mm">
+      <ion-datetime name="horaCita"  [(ngModel)]="agendar.horaCita" placeholder="Hora"
+      [min]="minDate" max="18:59" minuteValues="0,15,30,45" display-format="HH:mm">
       </ion-datetime>
     </ion-item>
     <br>
-    <ion-button expand="block" (click)="agendarCita(agendar.nombreMascota, agendar.fechaCita, agendar.horaCita)"
+    <ion-button expand="block" (click)="agendarCita(agendar.idDueno, agendar.nombreMascota, agendar.fechaCita, agendar.horaCita, agendar.estado)"
       color="dark">Solicitar</ion-button>
   </form>
 </ion-content>

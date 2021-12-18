@@ -11,34 +11,39 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  id: string;
   doc: any;
   usuario: string;
-  userprofile: { 
-    id: string; 
+  userprofile: {
+    id: string;
     nombre: string;
+    apellido: string
+    email: string;
+    direccion: string;
+    fono: string;
   }[];
 
   public userProfile: UserProfile;
 
 
-  constructor(private menu: MenuController, 
+  constructor(private menu: MenuController,
     private firestore: AngularFirestore,
     private authService: AuthService,
     private router: Router,
     //private profileService: ProfileService,
     private alertCtrl: AlertController,
     public toastController: ToastController,
-) { }
+  ) { }
 
 
   ngOnInit() {
-    /*this.profileService.getUserProfile().then(profile$ => {
+    /* this.profileService.getUserProfile().then(profile$ => {
       profile$.subscribe(userProfile => {
         this.userProfile = userProfile;
         
-        // metodo asincronico
+        //metodo asincronico
         
-        this.usuario = userProfile.fullName;*/
+        this.usuario = userProfile.fullName; */
 
   }
 

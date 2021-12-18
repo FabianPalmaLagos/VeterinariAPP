@@ -51,8 +51,23 @@ const routes: Routes = [
   import ('./pages/mascotas/mascotas.module').then(
     m => m.MascotasPageModule),
     canActivate: [AuthGuard] 
-}
- 
+},
+  { path: 'profile', 
+  loadChildren:() => 
+  import ('./pages/profile/profile.module').then(
+    m => m.ProfilePageModule),
+    canActivate: [AuthGuard]
+  },
+  { path: 'edit-mascota/:id', loadChildren: () =>
+  import('./pages/edit-mascota/edit-mascota.module').then(
+    m => m.EditMascotaPageModule),
+    canActivate: [AuthGuard]
+},
+  { path: 'edit-cita/:id', loadChildren: () =>
+  import('./pages/edit-cita/edit-cita.module').then(
+    m => m.EditCitaPageModule),
+    canActivate: [AuthGuard]
+},
 ];
 
 @NgModule({
